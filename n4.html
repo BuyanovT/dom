@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <label for="borderWidth">Толщина рамки:</label>
+    <input type="number" id="borderWidth" placeholder="Введите толщину" min="1" max="20">
+    <label for="borderColor">Цвет рамки:</label>
+    <input type="color" id="borderColor">
+    <button id="change">Применить изменения</button>
+    <table id="tb">
+        <tr>
+            <th>А</th>
+            <th>В</th>
+        </tr>
+        <tr>
+            <td>80 М</td>
+            <td>120 М </td>
+        </tr>
+        <tr>
+            <td>30 М</td>
+            <td>50 М </td>
+        </tr>
+    </table>
+    <script>
+        document.getElementById("change").addEventListener("click", function () {
+            const table = document.getElementById("tb");
+            const borderWidth = document.getElementById("borderWidth").value;
+            const borderColor = document.getElementById("borderColor").value;
+
+            if (!borderWidth || borderWidth <= 0) {
+                alert("Пожалуйста, введите корректную толщину рамки!");
+                return;
+            }
+
+            table.style.border = `${borderWidth}px solid ${borderColor}`;
+        });
+    </script>
+
+</body>
+</html>

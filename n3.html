@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <label for="bgColor">Цвет фона:</label>
+    <input type="color" id="bgColor">
+    <label for="fgColor">Цвет текста:</label>
+    <input type="color" id="fgColor">
+    <input type="button" value="Изменить цвета" id="colors">
+    <div id="colorBox"> Измените мои цвета!</div>
+    <script>
+        document.querySelector("#colors").onclick = function () {
+            let bgColor = document.querySelector("#bgColor").value;
+            let fgColor = document.querySelector("#fgColor").value;
+            let colorBox = document.querySelector("#colorBox");
+            colorBox.style.backgroundColor = bgColor;
+            colorBox.style.color = fgColor;
+            colorBox.style.transition = "background-color 0.5s, color 0.5s";
+        };
+    </script>
+
+</body>
+</html>

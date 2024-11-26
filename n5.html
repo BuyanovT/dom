@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <label for="n1">Первое число:</label>
+    <input type="number" id="n1" placeholder="Введите число">
+    <label for="n2">Второе число:</label>
+    <input type="number" id="n2" placeholder="Введите число">
+    <button id="calculate">Посчитать сумму</button>
+    <p>Результат: <span id="result">0</span></p>
+    <script>
+        document.querySelector("#calculate").addEventListener("click", function() {
+            let num1 = parseFloat(document.querySelector("#n1").value);
+            let num2 = parseFloat(document.querySelector("#n2").value);
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Пожалуйста, введите оба числа!");
+                return;
+            }
+            let sum = num1 + num2;
+            document.querySelector("#result").textContent = sum.toFixed(2);
+        });
+    </script>
+</body>
+</html>

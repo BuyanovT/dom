@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Измените изображение по URL</h1>
+        <img src="img/1.png" alt="Изображение" class="img1">
+        <div class="input-container">
+            <input type="text" id="imageUrl" placeholder="Введите URL картинки">
+            <button id="change">Изменить картинку</button>
+        </div>
+    </div>
+    <script>
+        document.querySelector("#change").onclick = function() {
+            let imageUrl = document.querySelector("#imageUrl").value.trim();
+            if (imageUrl) {
+                let img = new Image();
+                img.onload = function() {
+                    document.querySelector(".img1").src = imageUrl;
+                }
+                img.onerror = function() {
+                    alert("Ошибка: Невозможно загрузить картинку по указанному URL.");
+                }
+                img.src = imageUrl;
+            } else {
+                alert("Пожалуйста, введите URL картинки.");
+            }
+        }
+    </script>
+</body>
+</html>
